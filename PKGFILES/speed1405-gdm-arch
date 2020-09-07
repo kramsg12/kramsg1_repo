@@ -10,7 +10,7 @@ depends=(
     # package list
     'xorg'
     'gdm'
-    'NetworkManager' 
+    'networkmanager' 
     
 )
 
