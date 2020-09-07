@@ -18,6 +18,7 @@ depends=(
     'man-pages'
     'texinfo'
     'zsh'
-    'pam'
+    'sudo'
+    'bash'
     
 )
