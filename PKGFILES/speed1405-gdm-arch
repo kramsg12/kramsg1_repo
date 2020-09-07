@@ -1,0 +1,21 @@
+Maintainer: speed1405
+pkgname=speed1405-gdm-arch
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="gdm display manager for arch linux"
+arch=('any')
+url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
+license=('MIT')
+depends=(
+    # package list
+    'xorg'
+    'gdm'
+    'NetworkManager' 
+    
+)
+
+
+post_install() {
+    systemctl enable --now gdm.service
+    systemctl enable --now NetworkManager.service
+}
