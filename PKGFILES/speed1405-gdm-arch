@@ -14,7 +14,7 @@ depends=(
 )
 
 pre_install() {
-    pacman -S --noconfirm xorg 
+    pacman -S --noconfirm xorg terminator
 }
 
 post_install() {
