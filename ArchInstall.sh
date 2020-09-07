@@ -69,12 +69,8 @@ pacman -Sy
 pacstrap /mnt kramsg1-base speed1405-gdm-arch terminator
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
+mv -f pacman.conf /mnt/etc/pacman.conf
 
-#cat >> /mnt/etc/pacman.conf <<EOF
-#[kramsg1_repo]
-#SigLevel = Optional TrustAll
-#Server = https://kramsg12.github.io/$repo/$arch
-#EOF
 
 arch-chroot /mnt bootctl install
 
