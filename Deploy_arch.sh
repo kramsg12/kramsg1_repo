@@ -1,4 +1,6 @@
 #!/bin/bash
+#WARNING the following packages are needed if installing on archiso:
+#bash, curl, wget, dialog as script dependants.
 # WARNING: this script will destroy data on the selected disk.
 # This script can be run by executing the following:
 #   curl -sL http://bit.ly/kramsg1arch | bash
