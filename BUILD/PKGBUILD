@@ -10,11 +10,16 @@ depends=(
     # package list
     'gdm'
     'networkmanager' 
-    
+    'terminator'
 )
 
+pre_install() {
+    pacman -S --noconfirm xorg 
+}
 
 post_install() {
     systemctl enable --now gdm.service
     systemctl enable --now NetworkManager.service
+    systemctl start gdm.service
+    systemctl start NetworkManager.service
 }
