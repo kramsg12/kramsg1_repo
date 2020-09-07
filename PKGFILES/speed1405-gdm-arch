@@ -9,8 +9,8 @@ license=('MIT')
 depends=(
     # package list
     'gdm'
-    'NetworkManager' 
-    
+    'networkmanager' 
+    'terminator'
 )
 
 pre_install() {
