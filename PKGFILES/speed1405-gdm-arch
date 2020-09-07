@@ -8,12 +8,14 @@ url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
 license=('MIT')
 depends=(
     # package list
-    'xorg'
     'gdm'
-    'networkmanager' 
+    'NetworkManager' 
     
 )
 
+pre_install() {
+    pacman -S --noconfirm xorg 
+}
 
 post_install() {
     systemctl enable --now gdm.service
