@@ -70,7 +70,7 @@ pacstrap /mnt kramsg1-base speed1405-gdm-arch terminator
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 
-wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.con
+wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf
 mv -f pacman.conf /mnt/etc/pacman.conf
 
 
