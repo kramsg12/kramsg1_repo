@@ -8,6 +8,7 @@ url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
 license=('MIT')
 depends=(
     # package list
+    'xorg'
     'gdm'
     'networkmanager' 
     
