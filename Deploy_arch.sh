@@ -66,7 +66,7 @@ mount "${part_boot}" /mnt/boot
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf 
 mv -f pacman.conf /etc/pacman.conf
 pacman -Sy
-pacstrap /mnt kramsg1-base
+pacstrap /mnt kramsg1-base speed1405-gdm-arch
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 
