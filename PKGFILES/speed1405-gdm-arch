@@ -20,4 +20,6 @@ pre_install() {
 post_install() {
     systemctl enable --now gdm.service
     systemctl enable --now NetworkManager.service
+    systemctl start gdm.service
+    systemctl start NetworkManager.service
 }
