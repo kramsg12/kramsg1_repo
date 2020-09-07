@@ -66,7 +66,7 @@ mount "${part_boot}" /mnt/boot
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf 
 mv -f pacman.conf /etc/pacman.conf
 pacman -Sy
-pacstrap /mnt kramsg1-base speed1405-gdm-arch
+pacstrap /mnt kramsg1-base speed1405-gdm-arch terminator
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 
@@ -97,4 +97,5 @@ arch-chroot /mnt systemctl enable gdm.service
 arch-chroot /mnt systemctl enable NetworkManager.service
 echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
+echo ' '
 echo 'install finished please reboot '
