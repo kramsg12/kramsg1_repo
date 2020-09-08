@@ -1,5 +1,5 @@
 DKMS make.log for broadcom-wl-6.30.223.271 for kernel 5.8.7-arch1-1 (x86_64)
-Tue 08 Sep 2020 14:10:07 AEST
+Tue 08 Sep 2020 14:39:12 AEST
 make: Entering directory '/usr/lib/modules/5.8.7-arch1-1/build'
 CFG80211 API is prefered for this kernel version
 Using CFG80211 API
@@ -12,6 +12,17 @@ Using CFG80211 API
 /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:2405:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
  2405 |  struct cfg80211_roam_info roam_info = {
       |  ^~~~~~
+In file included from /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:40:
+/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c: In function ‘wl_set_auth_type’:
+/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.h:52:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   52 |  if (wl_dbg_level & WL_DBG_DBG) {   \
+      |     ^
+/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:815:3: note: in expansion of macro ‘WL_DBG’
+  815 |   WL_DBG(("network eap\n"));
+      |   ^~~~~~
+/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:816:2: note: here
+  816 |  default:
+      |  ^~~~~~~
 /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/shared/linux_osl.c: In function ‘osl_os_get_image_block’:
 /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/shared/linux_osl.c:1083:28: warning: passing argument 2 of ‘kernel_read’ makes pointer from integer without a cast [-Wint-conversion]
  1083 |  rdlen = kernel_read(fp, fp->f_pos, buf, len);
@@ -49,17 +60,6 @@ In file included from ./include/linux/huge_mm.h:8,
 ./include/linux/fs.h:3049:59: note: expected ‘loff_t *’ {aka ‘long long int *’} but argument is of type ‘int’
  3049 | extern ssize_t kernel_read(struct file *, void *, size_t, loff_t *);
       |                                                           ^~~~~~~~
-In file included from /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:40:
-/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c: In function ‘wl_set_auth_type’:
-/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.h:52:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   52 |  if (wl_dbg_level & WL_DBG_DBG) {   \
-      |     ^
-/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:815:3: note: in expansion of macro ‘WL_DBG’
-  815 |   WL_DBG(("network eap\n"));
-      |   ^~~~~~
-/home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_cfg80211_hybrid.c:816:2: note: here
-  816 |  default:
-      |  ^~~~~~~
 /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_linux.c: In function ‘wl_pci_probe’:
 /home/kramsg1/git/kramsg1_repo/BUILD/src/broadcom-wl/6.30.223.271/build/src/wl/sys/wl_linux.c:776:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
   776 |  if ((val & 0x0000ff00) != 0)
