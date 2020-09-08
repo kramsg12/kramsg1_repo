@@ -14,12 +14,12 @@ depends=(
 )
 
 pre_install() {
-    pacman -S --noconfirm xorg 
+    pacman -S --noconfirm xorg terminator
 }
 
 post_install() {
-    systemctl enable --now gdm.service
-    systemctl enable --now NetworkManager.service
+    systemctl enable gdm.service
+    systemctl enable NetworkManager.service
     systemctl start gdm.service
     systemctl start NetworkManager.service
 }

@@ -1,0 +1,18 @@
+
+ Maintainer: speed1405
+pkgname=speed1405-cinnamon-arch
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Base system configuration for mdaffin systems"
+arch=('any')
+url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
+license=('MIT')
+depends=(
+    # package list
+    'gdm'
+    
+)
+
+post_install() {
+    pacman -S --noconfirm cinnamon 
+}
