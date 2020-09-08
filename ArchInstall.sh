@@ -88,15 +88,16 @@ options  root=PARTUUID=$(blkid -s PARTUUID -o value "$part_root") rw
 EOF
 
 echo "LANG=en_GB.UTF-8" > /mnt/etc/locale.conf
+arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
 
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/sudoers
-arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input,sudoers "$user"
+arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input, "$user"
 mv -f sudoers /mnt/etc/sudoers
 arch-chroot /mnt chsh -s /usr/bin/zsh
 arch-chroot /mnt systemctl enable gdm.service
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt pacman -S --noconfirm kramsg1-cinnimon
-arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
+#arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
 echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
 echo ' '
