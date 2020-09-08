@@ -88,7 +88,7 @@ options  root=PARTUUID=$(blkid -s PARTUUID -o value "$part_root") rw
 EOF
 
 echo "LANG=en_GB.UTF-8" > /mnt/etc/locale.conf
-arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
+arch-chroot /mnt pacman -S --noconfirm broadcom-wl sudo
 
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/sudoers
 arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input, "$user"
