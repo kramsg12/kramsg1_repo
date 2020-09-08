@@ -96,4 +96,5 @@ arch-chroot /mnt systemctl enable NetworkManager.service
 echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
 echo ' '
-echo 'install finished please reboot '
+echo 'install finished Pc will reboot '
+reboot
