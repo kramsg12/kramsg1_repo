@@ -91,7 +91,7 @@ echo "LANG=en_GB.UTF-8" > /mnt/etc/locale.conf
 arch-chroot /mnt pacman -S --noconfirm broadcom-wl sudo
 
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/sudoers
-arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input "$user"
+arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,root,games,input "$user"
 mv -f sudoers /mnt/etc/sudoers
 arch-chroot /mnt chsh -s /usr/bin/zsh
 arch-chroot /mnt systemctl enable gdm.service
