@@ -89,7 +89,9 @@ EOF
 
 echo "LANG=en_GB.UTF-8" > /mnt/etc/locale.conf
 
-arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input "$user"
+wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/sudoers
+arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input,sudoers "$user"
+mv -f sudoers /mnt/etc/sudoers
 arch-chroot /mnt chsh -s /usr/bin/zsh
 arch-chroot /mnt systemctl enable gdm.service
 arch-chroot /mnt systemctl enable NetworkManager.service
@@ -99,4 +101,5 @@ echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
 echo ' '
 echo 'install finished Pc will reboot '
+sleep 5
 reboot
