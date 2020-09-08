@@ -7,10 +7,10 @@ pacman -Syu --noconfirm
 pacman -S --noconfirm git base-devel go
 
 # installing AUR support
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si
+#cd
 
 # steam and lutris
 pacman -S --noconfirm steam lutris
