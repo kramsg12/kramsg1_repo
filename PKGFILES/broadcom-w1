@@ -3,7 +3,7 @@
 _module=broadcom-wl
 _kernelname=              # Build against stock -ARCH kernel
 #_kernelname=-custom      # Build against kernel with a different name
-pkgname=${_module}${_kernelname}
+pkgname=kramsg1-broadcom-wl
 pkgver=6.30.223.271
 pkgrel=226
 pkgdesc='Broadcom 802.11 Linux STA wireless driver'
