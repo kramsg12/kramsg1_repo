@@ -1,41 +1,35 @@
-# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
-
-_module=broadcom-wl
-_kernelname=              # Build against stock -ARCH kernel
-#_kernelname=-custom      # Build against kernel with a different name
-pkgname=kramsg1-broadcom-wl
-pkgver=6.30.223.271
-pkgrel=226
-pkgdesc='Broadcom 802.11 Linux STA wireless driver'
-arch=('any')
-url='https://www.broadcom.com/support/download-search/?pf=Wireless+LAN+Infrastructure'
-license=('custom')
-makedepends=("linux${_kernelname}-headers" "${_module}-dkms=${pkgver}")
+# Maintainer: Jguer <joaogg3@gmail.com>
+pkgname=yay
+pkgver=10.0.4
+pkgrel=1
+pkgdesc="Yet another yogurt. Pacman wrapper and AUR helper written in go."
+arch=('i686' 'pentium4' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
+url="https://github.com/Jguer/yay"
+license=('GPL')
+depends=(
+  'libalpm.so>=12'
+  'sudo'
+  'git'
+)
+makedepends=(
+  'go'
+)
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/Jguer/yay/archive/v${pkgver}.tar.gz")
+sha256sums=('c0fb3df21a12d87c050317f68cc410b39d40f4af77192688956db67dc036a674')
 
 build() {
-    _kernver=$(</usr/src/linux${_kernelname}/version)
+  export GOPATH="$srcdir"/gopath
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
 
-    fakeroot dkms build --dkmstree "${srcdir}" -m ${_module}/${pkgver} -k ${_kernver}
+  cd "$srcdir/$pkgname-$pkgver"
+  LDFLAGS="-extldflags \"${LDFLAGS}\"" \
+    make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX="/usr" build
 }
 
 package() {
-    depends=("linux${_kernelname}")
-
-    _kernver=$(</usr/src/linux${_kernelname}/version)
-    _extramodules="/usr/lib/modules/${_kernver}/extramodules"
-
-    install -Dm644 -t "${pkgdir}${_extramodules}" \
-        ${_module}/${pkgver}/${_kernver}/${CARCH}/module/*
-
-    # compress kernel modules
-    find "$pkgdir" -name "*.ko" -exec xz {} +
-
-    _license="/usr/share/licenses/${_module}-dkms"
-    if [[ -d ${_license} ]]; then
-        install -Dm644 -t "${pkgdir}"/${_license/-dkms/${_kernelname}} ${_license}/*
-    fi
-    _modprobe="/usr/lib/modprobe.d/${_module}-dkms.conf"
-    if [[ -r ${_modprobe} ]]; then
-        install -Dm644 ${_modprobe} "${pkgdir}"/${_modprobe/-dkms/${_kernelname}}
-    fi
+  cd "$srcdir/$pkgname-$pkgver"
+  make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX="/usr" install
 }
