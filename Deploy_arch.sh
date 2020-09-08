@@ -11,7 +11,7 @@ TITLE="Os Deployment Tools"
 MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Arch Pc - GPT Systemd"
-         2 "Option 2"
+         2 "Arch Pc - GPT Systemd Full Disk Encription"
          3 "Option 3")
 
 CHOICE=$(dialog --clear \
