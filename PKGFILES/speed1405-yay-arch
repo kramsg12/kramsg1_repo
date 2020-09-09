@@ -1,6 +1,21 @@
-
+ Maintainer: speed1405
+pkgname=speed1405-yay-arch
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="installs yay to system for AUR"
+arch=('any')
+url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
+license=('MIT')
+depends=(
+    # package list
+    'go'
+    'git'
+    
+)
 
 
 post_install() {
- 
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 }
