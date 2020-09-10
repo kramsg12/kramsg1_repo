@@ -12,7 +12,7 @@ MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Arch Pc - GPT Systemd"
          2 "Arch Pc - GPT Systemd Full Disk Encription"
-         3 "Option 3")
+         3 "Update Pacman.conf File")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -30,9 +30,13 @@ case $CHOICE in
             ;;
         2)
             echo "You chose Option 2"
+            
+
             ;;
         3)
             echo "You chose Option 3"
+            wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf
+            mv -f pacman.conf /mnt/etc/pacman.conf
             ;;
 esac
 
