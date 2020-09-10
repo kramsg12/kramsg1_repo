@@ -36,7 +36,7 @@ case $CHOICE in
         3)
             echo "You chose Option 3"
             wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf
-            mv -f pacman.conf /mnt/etc/pacman.conf
+            mv -f pacman.conf /etc/pacman.conf
             ;;
 esac
 
