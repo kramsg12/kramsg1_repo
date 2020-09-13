@@ -1,5 +1,5 @@
-pacman -Sy
-pacman -S --noconfirm wget dialog  
+sudo pacman -Sy
+sudo pacman -S --noconfirm wget dialog  
 
 #!/bin/bash
 
@@ -13,7 +13,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Arch Pc - GPT Systemd"
          2 "Arch Pc - GPT Systemd Full Disk Encription"
          3 "Update Pacman.conf File"
-         4 "Custom Arch Deploy")
+         4 "Custom desktop theme")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -43,7 +43,7 @@ case $CHOICE in
             
          4)
             echo "You chose Option 4"
-            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallkramsg1.sh | bash
+            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop.sh | bash
             ;;
 esac
 
