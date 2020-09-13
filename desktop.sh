@@ -1,3 +1,5 @@
+
+$user=Sys.info()[["user"]]
 wget https://github.com/kramsg12/kramsg1_repo/raw/master/desktop/cinnamon.tar.xz
-sudo tar -xvf cinnamon.tar.xz -C /etc/skel
-cp -rf /etc/skel/cinnamon/skel/* ./
+tar -xf cinnamon.tar.xz
+cp -rf ./cinnamon/skel/* /home/
