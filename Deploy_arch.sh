@@ -12,7 +12,8 @@ MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Arch Pc - GPT Systemd"
          2 "Arch Pc - GPT Systemd Full Disk Encription"
-         3 "Update Pacman.conf File")
+         3 "Update Pacman.conf File"
+         4 "Custom Arch Deploy")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -38,6 +39,11 @@ case $CHOICE in
             wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf
             sudo mv -f pacman.conf /etc/pacman.conf
             sudo pacman -Sy
+            ;;
+            
+         4)
+            echo "You chose Option 4"
+            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallkramsg1.sh | bash
             ;;
 esac
 
