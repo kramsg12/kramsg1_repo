@@ -1,5 +1,5 @@
-pacman -Sy
-pacman -S --noconfirm wget dialog  
+sudo pacman -Sy
+sudo pacman -S --noconfirm wget dialog  
 
 #!/bin/bash
 
