@@ -1,0 +1,19 @@
+ Maintainer: Kramsg1
+pkgname=kramsg1-cinnimon
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Install Cinnimon"
+arch=('any')
+url="https://raw.githubusercontent.com/kramsg12/arch-repo/master"
+license=('MIT')
+depends=(
+    # package list
+    'cinnamon'
+    'nemo-fileroller'
+    'net-tools'
+    'network-manager-applet'
+    'wpa_supplicant'
+    'wireless_tools'
+    'gnome-keyring'
+    
+)
