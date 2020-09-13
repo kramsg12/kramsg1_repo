@@ -1,7 +1,5 @@
- 
 # Maintainer: Jguer <joaogg3@gmail.com>
-pkg=yay
-pkgname=yay-kramsg1
+pkgname=yay
 pkgver=10.0.4
 pkgrel=1
 pkgdesc="Yet another yogurt. Pacman wrapper and AUR helper written in go."
@@ -26,12 +24,12 @@ build() {
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
 
-  cd "$srcdir/$pkg-$pkgver"
+  cd "$srcdir/$pkgname-$pkgver"
   LDFLAGS="-extldflags \"${LDFLAGS}\"" \
     make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX="/usr" build
 }
 
 package() {
-  cd "$srcdir/$pkg-$pkgver"
+  cd "$srcdir/$pkgname-$pkgver"
   make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX="/usr" install
 }
