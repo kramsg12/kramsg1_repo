@@ -28,7 +28,7 @@ build() {
 }
 
 package() {
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
+    cd "${srcdir}"/cinnamon-desktop-${pkgver}/build
 
     DESTDIR="${pkgdir}" samu install
 }
