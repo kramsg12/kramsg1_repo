@@ -1,0 +1,43 @@
+# Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
+# Maintainer: Bernhard Landauer <bernhard[at]manjaro[dot]org>
+
+_pkgbase=desktop-settings
+pkgname=manjaro-cinnamon-kramsg1
+pkgver=20200804
+pkgrel=1
+arch=('any')
+url="https://gitlab.manjaro.org/profiles-and-settings/$_pkgbase"
+_branch=master
+license=('GPL')
+pkgdesc='Manjaro Linux Cinnamon settings'
+depends=('artwork-cinnamon-minimal'
+        'cantarell-fonts'
+        'cinnamon'
+        'kvantum-manjaro'
+        'mint-themes'
+        'papirus-maia-icon-theme'
+        'qt5ct'
+        'ttf-comfortaa'
+        'xcursor-breeze'
+        'manjaro-base-skel')
+makedepends=('git')
+optdepends=('plymouth-theme-manjaro-cinnamon'
+            'cinnamon-sounds')
+conflicts=('manjaro-desktop-settings')
+provides=('manjaro-desktop-settings')
+source=("git+$url.git#branch=$_branch")
+sha256sums=('SKIP')
+
+pkgver() {
+    date +%Y%m%d
+}
+
+package() {
+    cd $_pkgbase
+    install -d $pkgdir/etc
+    cp -r community/cinnamon/skel $pkgdir/etc
+    install -d $pkgdir/usr/share/glib-2.0
+    cp -r community/cinnamon/schemas $pkgdir/usr/share/glib-2.0
+    install -d $pkgdir/usr/bin
+    cp community/cinnamon/scripts/* $pkgdir/usr/bin
+}
