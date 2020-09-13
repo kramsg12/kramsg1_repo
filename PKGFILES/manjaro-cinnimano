@@ -1,17 +1,10 @@
-# Maintainer: Helmut Stult <helmut[at]manjaro[dot]org>
-# Maintainer: Bernhard Landauer <bernhard[at]manjaro[dot]org>
 
-# Arch credits:
-# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
-# Contributor: Alexandre Filgueria <alexfilgueira@antergos.com>
-# Contributor: Jan de Groot <jan@archlinux.org>
-
-pkgname=cinnamon-desktop
+pkgname=kramsg1-cinnamon-desktop
 pkgver=4.6.4
 pkgrel=1
 pkgdesc="Library with common API for various Cinnamon modules"
 arch=('x86_64')
-url="https://github.com/linuxmint/${pkgname}"
+url="https://github.com/linuxmint/cinnamon-desktop"
 license=('GPL' 'LGPL')
 depends=('accountsservice' 'gtk3' 'libxkbfile' 'libpulse')
 makedepends=('meson' 'samurai' 'gobject-introspection' 'intltool')
@@ -21,14 +14,14 @@ sha256sums=('8b0f69c4acbeabca723a95ec80905601eec8d563c96ad88a9de3ddac56925ef6'
             '45f403e6fe4ec701a0f3d16e990bb36598dd4a58fac5a374f85ccecdf74dd98a')
 
 prepare() {
-    cd "${srcdir}"/${pkgname}-${pkgver}
+    cd "${srcdir}"/cinnamon-desktop-${pkgver}
     # Adjust configuration
     patch -Np1 -i ../config.patch
 }
 
 build() {
-    mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
+    mkdir -p "${srcdir}"/cinnamon-desktop-${pkgver}/build
+    cd "${srcdir}"/cinnamon-desktop-${pkgver}/build
 
     meson --prefix=/usr --buildtype=plain ..
     samu
