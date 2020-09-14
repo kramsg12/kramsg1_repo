@@ -3,8 +3,8 @@ sudo pacman -S --noconfirm wget dialog
 
 #!/bin/bash
 
-HEIGHT=15
-WIDTH=40
+HEIGHT=30
+WIDTH=50
 CHOICE_HEIGHT=4
 BACKTITLE="Backtitle here"
 TITLE="Os Deployment Tools"
