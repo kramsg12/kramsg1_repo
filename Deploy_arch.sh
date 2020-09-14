@@ -48,14 +48,14 @@ case $CHOICE in
             ;;
             
          5)
-            echo "You chose Option 4"
-            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop.sh | bash
+            echo "You chose Option 5"
+            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallsddm.sh | bash
             ;;
 esac
 
 
 
-https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallsddm.sh
+
 
 
 
