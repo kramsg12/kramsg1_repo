@@ -17,7 +17,8 @@ OPTIONS=(1 "Arch Pc - GPT Systemd"
          5 "Install Arch SDDM"
          6 "SDDM Theme"
          7 "Loginizer"
-         8 "Zune SDDM Theme")
+         8 "Zune SDDM Theme"
+         9 "Arch Install LightDM")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
