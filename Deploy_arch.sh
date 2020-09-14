@@ -13,7 +13,8 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Arch Pc - GPT Systemd"
          2 "Arch Pc - GPT Systemd Full Disk Encription"
          3 "Update Pacman.conf File"
-         4 "Custom desktop theme")
+         4 "Custom desktop theme"
+         5 "Install Arch SDDM")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -45,8 +46,16 @@ case $CHOICE in
             echo "You chose Option 4"
             curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop.sh | bash
             ;;
+            
+         5)
+            echo "You chose Option 4"
+            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop.sh | bash
+            ;;
 esac
 
+
+
+https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallsddm.sh
 
 
 
