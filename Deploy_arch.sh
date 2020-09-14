@@ -61,12 +61,6 @@ esac
 
 
 
-https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop/Inverse-dark.tar.gz
-
-
-
-
-
 
 
 
