@@ -61,18 +61,24 @@ case $CHOICE in
             ;;
             
           7)
-            echo "You chose Option 6"
+            echo "You chose Option 7"
             wget https://github.com/juhaku/loginized/releases/download/1.4.0/loginized-1.4.0.pacman
             sudo pacman -S glib2 xdg-utils
             sudo pacman -Udd loginized-1.4.0.pacman 
             ;;
             
           8)
-            echo "You chose Option 6"
+            echo "You chose Option 8"
             wget https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1NTYxOTA4ODYiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjAzZDMwNGZiYzdjYzc5YmZjN2YyNGM3MTUxODUyYTQ5OGI1ZGJjNjc2N2EwMGU5MGU4YTBhNjA2ODc0NzFhMmRkNWUyMjg2OGEwOWE2OGUyZmNmZmU2NjJmNjU2YzRiYjc1MzRiZWFhOGQ1ZDQ3MTMyYWIwZGJlNjBiYmNiNGExIiwidCI6MTYwMDEyNzgzNywic3RmcCI6IjAwODdlNjJkODVlYjkyM2RjM2RhYjNlNzYyNTBkOWJlIiwic3RpcCI6IjEyMC4xNTIuMTMyLjI0NSJ9.0CPwGTUb2kXhDFqkiXqd3pPaCSB54dbn_LLbTV5Ysx8/sddm-zune.tar.gz
             pacman -S qt5-quickcontrols2 qt5-graphicaleffects qt5-svg
             sudo tar -xzvf sddm-zune.tar.gz -C /usr/share/sddm/themes
             sddm-greeter --test-mode --theme /usr/share/sddm/themes/zune
+            
+            ;;
+            
+          9)
+            echo "You chose Option 9"
+            curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallLightdm.sh | bash
             
             ;;
 esac
