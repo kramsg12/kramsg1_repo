@@ -15,7 +15,8 @@ OPTIONS=(1 "Arch Pc - GPT Systemd"
          3 "Update Pacman.conf File"
          4 "Custom desktop theme"
          5 "Install Arch SDDM"
-         6 "SDDM Theme")
+         6 "SDDM Theme"
+         7 "Loginizer")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -56,6 +57,13 @@ case $CHOICE in
          6)
             echo "You chose Option 6"
             wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop/Inverse-dark.tar.gz
+            ;;
+            
+          7)
+            echo "You chose Option 6"
+            wget https://github.com/juhaku/loginized/releases/download/1.4.0/loginized-1.4.0.pacman
+            sudo pacman -S glib2 xdg-utils
+            sudo pacman -Udd loginized-1.4.0.pacman 
             ;;
 esac
 
