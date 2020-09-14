@@ -14,7 +14,8 @@ OPTIONS=(1 "Arch Pc - GPT Systemd"
          2 "Arch Pc - GPT Systemd Full Disk Encription"
          3 "Update Pacman.conf File"
          4 "Custom desktop theme"
-         5 "Install Arch SDDM")
+         5 "Install Arch SDDM"
+         6 "SDDM Theme)
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -51,7 +52,16 @@ case $CHOICE in
             echo "You chose Option 5"
             curl -sL https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/archinstallsddm.sh | bash
             ;;
+            
+         6)
+            echo "You chose Option 6"
+            wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop/Inverse-dark.tar.gz
+            ;;
 esac
+
+
+
+https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/desktop/Inverse-dark.tar.gz
 
 
 
