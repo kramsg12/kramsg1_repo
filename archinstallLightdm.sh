@@ -95,7 +95,7 @@ arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,r
 mv -f sudoers /mnt/etc/sudoers
 arch-chroot /mnt chsh -s /usr/bin/zsh
 arch-chroot /mnt systemctl enable lightdm.service
-arch-chroot /mnt systemctl start lightdm.service
+#arch-chroot /mnt systemctl start lightdm.service
 arch-chroot /mnt pacman -S --noconfirm networkmanager
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt pacman -S --noconfirm kramsg1-cinnimon
