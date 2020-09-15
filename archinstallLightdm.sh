@@ -94,14 +94,14 @@ wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/sudoers
 arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,root,games,input "$user"
 mv -f sudoers /mnt/etc/sudoers
 arch-chroot /mnt chsh -s /usr/bin/zsh
-arch-chroot /mnt systemctl enable lightdm.service
-#arch-chroot /mnt systemctl start lightdm.service
 arch-chroot /mnt pacman -S --noconfirm networkmanager
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt pacman -S --noconfirm kramsg1-cinnimon
 arch-chroot /mnt pacman -S --noconfirm curl
 arch-chroot /mnt pacman -S --noconfirm wget
-varch-chroot /mnt pacman -S --noconfirm gnome-tweaks
+arch-chroot /mnt pacman -S --noconfirm gnome-tweaks
+arch-chroot /mnt systemctl enable lightdm.service
+arch-chroot /mnt systemctl start lightdm.service
 
 #arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
 echo "$user:$password" | chpasswd --root /mnt
