@@ -97,9 +97,9 @@ arch-chroot /mnt chsh -s /usr/bin/zsh
 arch-chroot /mnt pacman -S --noconfirm networkmanager
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt pacman -S --noconfirm kramsg1-cinnimon
+arch-chroot /mnt pacman -S --noconfirm lightdm-gtk-greeter
 arch-chroot /mnt pacman -S --noconfirm curl
 arch-chroot /mnt pacman -S --noconfirm wget
-arch-chroot /mnt pacman -S --noconfirm gnome-tweaks
 arch-chroot /mnt systemctl enable lightdm.service
 arch-chroot /mnt systemctl start lightdm.service
 
