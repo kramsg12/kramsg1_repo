@@ -99,7 +99,7 @@ arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt pacman -S --noconfirm kramsg1-cinnimon
 arch-chroot /mnt pacman -S --noconfirm curl
 arch-chroot /mnt pacman -S --noconfirm wget
-varch-chroot /mnt pacman -S --noconfirm gnome-tweaks
+arch-chroot /mnt pacman -S --noconfirm gnome-tweaks
 
 #arch-chroot /mnt pacman -S --noconfirm broadcom-wl gksu sudo
 echo "$user:$password" | chpasswd --root /mnt
